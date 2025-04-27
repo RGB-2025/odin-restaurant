@@ -1,3 +1,135 @@
+body, html {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#fffdf9, #ffecc5);
+}
+
 body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header, header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+header {
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    background-color: #fffdf9;
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 25%);
+}
+
+header nav {
+    gap: 1rem;
+}
+
+#highlights, #testimonials {
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+#hero {
+    background: linear-gradient(to right, #fff0db 25%, transparent), url("https://placehold.co/600x400/orange/black");
+    padding: 15% 5%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+#hero p, #hero h1 {
+    margin-right: 50%;
+}
+
+#hero button {
+    margin-top: 2rem;
+    border: none;
+    padding: 0.5rem 2rem;
+    background-color: #765333;
+    font-weight: bolder;
+    color: white;
+    border-radius: 2rem;
+    transition: 0.3s;
+    box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 25%);
+}
+
+#hero button:hover {
+    box-shadow: 1rem 1rem 2rem rgb(0 0 0 / 50%);
+    scale: 1.2;
+    background-color: #604226;
+}
+
+#hero button:active {
+    box-shadow: 1rem 1rem 2rem rgb(0 0 0 / 50%);
+    scale: 1.2;
+    background-color: #2e1d0e;
+}
+
+#highlights ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#highlights li {
+    padding: 0;
+    margin: 0;
+    flex: 0 1 min(250px, auto);
+}
+
+#highlights li img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+#testimonials ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: max(10%, 1rem);
+}
+
+#testimonials li {
+    flex: 0 1 250px;
+}
+
+#testimonials figure p {
+    text-align: justify;
+}
+
+#testimonials figure img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+img {
+    box-shadow: 1rem 1rem 2rem rgb(0 0 0 / 10%);
+}
+
+#contact {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 4rem;
+    background: linear-gradient(transparent, #e8a96f);
+}
+
+footer > p {
+    margin-top: 1rem;
+    font-weight: bold;
 }
