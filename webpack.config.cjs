@@ -12,10 +12,16 @@ module.exports = {
     devtool: 'eval-source-map',
     devServer: {
         watchFiles: ['./src/template.html'],
+        static: {
+            directory: path.join(__dirname, 'src'),
+        },
+        compress: true,
+        port: 8080,
     },
     plugins: [
         new htmlPlugin({
             template: './src/template.html',
+            scriptLoading: 'defer',
         }),
     ],
     module: {
