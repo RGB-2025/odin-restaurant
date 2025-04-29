@@ -14,11 +14,16 @@ body {
     justify-content: space-between;
 }
 
+#content {
+    flex: 1;
+}
+
 header, header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    z-index: 1;
 }
 
 header {
@@ -51,5 +56,41 @@ footer {
 
 footer > p {
     margin-top: 1rem;
+    font-weight: bold;
+}
+
+.nav {
+    border: none;
+    outline: none;
+    background: none;
+    transition: font-weight 0.3s;
+    font-weight: normal;
+}
+
+/* From https://www.30secondsofcode.org/css/s/hover-underline-animation/ */
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.1rem;
+    bottom: -0.2rem;
+    left: 0;
+    background-color: #ff9e49;
+    transform-origin: center; /* Expand from center */
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+#chosen {
     font-weight: bold;
 }

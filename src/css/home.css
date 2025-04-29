@@ -82,3 +82,28 @@
     border-radius: 50%;
 }
 
+@keyframes move {
+    from {
+        opacity: 0;
+        scale: 0;
+        top: 20vh;
+        position: relative;
+    }
+
+    to {
+        opacity: 1;
+        top: 0;
+        position: relative;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      li {
+        animation: move linear both;
+        animation-timeline: view();
+        animation-range: 10vh 75vh;
+      } 
+    }
+  }
+
