@@ -70,10 +70,15 @@ export class Home {
             <section id="hero">
                 <h1>${title}</h1>
                 <p>${description}</p>
-                <button>Book a table now</button>
+                <button class="unloaded-fancy" onClick="window.location = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Book a table now</button>
             </section>
         `;
         this.construct.innerHTML += code;
+
+        setTimeout(() => {
+            const button = document.querySelector('#hero button');
+            if (button) button.className = 'loaded-fancy';
+        }, 500);
     }
 
     section(id, title, items) {

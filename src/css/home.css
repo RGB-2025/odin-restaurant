@@ -17,7 +17,7 @@
     margin-right: 50%;
 }
 
-#hero button {
+.loaded-fancy {
     margin-top: 2rem;
     border: none;
     padding: 0.5rem 2rem;
@@ -27,15 +27,44 @@
     border-radius: 2rem;
     transition: 0.3s;
     box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 25%);
+    user-select: none;
+    scale: 1;
 }
 
-#hero button:hover {
+@keyframes fade-in {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.unloaded-fancy {
+    position: relative;
+    margin-top: 2rem;
+    border: none;
+    padding: 0.5rem 2rem;
+    background-color: #765333;
+    font-weight: bolder;
+    color: white;
+    border-radius: 2rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 25%);
+    scale: 1;
+    user-select: none;
+
+    animation: fade-in 500ms ease forwards;
+}
+
+.loaded-fancy:hover {
     box-shadow: 1rem 1rem 2rem rgb(0 0 0 / 50%);
     scale: 1.2;
     background-color: #604226;
 }
 
-#hero button:active {
+.loaded-fancy:active {
     box-shadow: 1rem 1rem 2rem rgb(0 0 0 / 50%);
     scale: 1.2;
     background-color: #2e1d0e;

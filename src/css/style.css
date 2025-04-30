@@ -94,3 +94,7 @@ footer > p {
 #chosen {
     font-weight: bold;
 }
+
+.unloaded {
+    opacity: 0;
+}

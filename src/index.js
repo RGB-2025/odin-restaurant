@@ -11,7 +11,7 @@ let content = document.getElementById('content');
 let home = new Home(content);
 let menu = new Menu(content);
 let cssTags = {};
-let currentModule = 'home';
+let currentModule;
 
 function loadCSS(href, moduleName) {
     if (cssTags[moduleName]) return;
@@ -31,6 +31,13 @@ function unloadCSS(moduleName) {
 }
 
 function loadPage(tabName) {
+    let footer = document.querySelector('footer');
+
+    // Do not show contents or footer yet
+    content.classList.add('unloaded');
+    footer.classList.add('unloaded');
+
+
     // Remove past styles and unload
     if (currentModule) {
         unloadCSS(currentModule);
@@ -49,6 +56,20 @@ function loadPage(tabName) {
             menu.load();
             break;
     }
+
+    // Twice works like a charm
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            content.classList.remove('unloaded');
+            footer.classList.remove('unloaded');
+        });
+    });
+}
+
+// From: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 export {loadCSS, unloadCSS};
@@ -73,11 +94,14 @@ tabTitles.forEach((tabTitle, i) => {
 
     btn.addEventListener('click', (ev) => {
         if (btn.id !== 'chosen') {
+            // Scroll to top
+            topFunction();
+
             // Clear chosen
             chosen.id = '';
 
             // Make new chosen
-            btn.id = 'chosen';
+            btn.id = 'chosen';  
             chosen = btn;
 
             // Load
