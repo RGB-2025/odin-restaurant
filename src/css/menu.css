@@ -61,7 +61,6 @@ section li {
             animation: move ease-in-out both;
             animation-timeline: view();
             animation-range: entry 0% cover 30%;
-            will-change: transform, opacity;
         }
     }
 }

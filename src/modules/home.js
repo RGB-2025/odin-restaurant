@@ -68,8 +68,10 @@ export class Home {
     hero(title, description) {
         let code = `
             <section id="hero">
-                <h1>${title}</h1>
-                <p>${description}</p>
+                <div id="hero-text">
+                    <h1>${title}</h1>
+                    <p>${description}</p>
+                </div>
                 <button class="unloaded-fancy" onClick="window.location = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Book a table now</button>
             </section>
         `;

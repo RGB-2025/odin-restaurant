@@ -4,7 +4,7 @@ import './css/style.css';
 import { Home } from './modules/home.js';
 import { Menu } from './modules/menu.js';
 // import { AboutUs } from './modules/about.js';
-// import { Mission } from './modules/mission.js';
+// import { ContactUs } from './modules/contactus.js';
 
 // Page loading
 let content = document.getElementById('content');
@@ -55,6 +55,10 @@ function loadPage(tabName) {
             loadCSS('./css/menu.css', 'menu');
             menu.load();
             break;
+        case 'About Us':
+            currentModule = 'aboutus';
+            loadCSS('./css/aboutus.css', 'aboutus');
+            break;
     }
 
     // Twice works like a charm
@@ -86,7 +90,7 @@ tabTitles.forEach((tabTitle, i) => {
     btn.className = 'hover-underline-animation nav';
 
     // Default tab is first
-    if (i === 0) {
+    if (i === 2) {
         btn.id = 'chosen';
         chosen = btn;
         loadPage(tabTitle);

@@ -13,7 +13,7 @@
     background-position: 50%;
 }
 
-#hero p, #hero h1 {
+#hero-text {
     margin-right: 50%;
 }
 
@@ -30,6 +30,7 @@
     user-select: none;
     scale: 1;
 }
+
 
 @keyframes fade-in {
     from {
