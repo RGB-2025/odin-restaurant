@@ -3,13 +3,14 @@ import './css/style.css';
 
 import { Home } from './modules/home.js';
 import { Menu } from './modules/menu.js';
-// import { AboutUs } from './modules/about.js';
+import { AboutUs } from './modules/aboutus.js';
 // import { ContactUs } from './modules/contactus.js';
 
 // Page loading
 let content = document.getElementById('content');
 let home = new Home(content);
 let menu = new Menu(content);
+let aboutus = new AboutUs(content);
 let cssTags = {};
 let currentModule;
 
@@ -58,6 +59,7 @@ function loadPage(tabName) {
         case 'About Us':
             currentModule = 'aboutus';
             loadCSS('./css/aboutus.css', 'aboutus');
+            aboutus.load();
             break;
     }
 
