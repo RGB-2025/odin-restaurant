@@ -4,7 +4,6 @@ import './css/style.css';
 import { Home } from './modules/home.js';
 import { Menu } from './modules/menu.js';
 import { AboutUs } from './modules/aboutus.js';
-// import { ContactUs } from './modules/contactus.js';
 
 // Page loading
 let content = document.getElementById('content');
@@ -81,7 +80,7 @@ function topFunction() {
 export {loadCSS, unloadCSS};
 
 // Navigation loading
-let tabTitles = ['Home', 'Menu', 'About Us', 'Our Mission'];
+let tabTitles = ['Home', 'Menu', 'About Us'];
 let nav = document.getElementById('navigation');
 let chosen;
 
